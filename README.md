@@ -1,4 +1,4 @@
-# Relatorio-Infantil
+# mPDF - Report Creator
 
 This repository uses PHP 8 and mPDF(PHP Library) to assist in the process of creating a child's individual report. (before kindergarten, age 2-4)
 
