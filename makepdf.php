@@ -12,10 +12,10 @@ $mpdf = new \Mpdf\Mpdf();
 
 $data = '';
 
-$data .= '<h1> Relatório Individual';
-$data .= '<strong> Nome: </strong> ' . $fname . ' ' . $lname . '<br/>';
-$data .= '<strong> Email: </strong> ' . $email . '<br/>';
-$data .= '<strong> Mensage: </strong> ' . $message . '<br/>';
+$data .= '<h1> Relatório Individual</h1>';
+$data .= '<b> Nome:     </b>' . $fname . ' ' . $lname . '<br/>';
+$data .= '<b> Email:    </b>' . $email . '<br/>';
+$data .= '<b> Mensagem: </b>' . $message . '<br/>';
 //ifs adicionar msg
 
 //Wrute PDF
