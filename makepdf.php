@@ -6,9 +6,9 @@
     $turma = $_POST['turma'];
     $professora = $_POST['professora'];
     $message = $_POST['message'];
-    $primeiroParagrafo = "&emsp;&emsp; Durante esse ano procuramos a melhor forma de elaborar, propor e realizar diversas atividades que pudessem atrair a concentração das crianças, para que elas fossem capazes de aprender e desenvolver-se de acordo com seu ritmo, todas as formas de linguagem corporal, oral e visual. O desenvolvimento da escrita e da leitura foi acontecendo respeitando o tempo de cada um. Em Matemática trabalhamos assuntos com grande relevância para a vida da criança, acreditamos que muitos desses assuntos poderão ser consolidados na etapa seguinte.";
-    $segundoParagrafo = "&emsp;&emsp; A amizade, o companheirismo, a solidariedade e o carinho foram pontos positivos importantes para o crescimento pessoal e cognitivo durante todas as adaptações necessárias para a singularidade que este ano nos trouxe. Mais uma vez, queremos ressaltar e valorizar a importância do envolvimento da família durante as aulas. Prosseguimos na certeza de que Família e Escola caminham juntas para o pleno desenvolvimento das crianças.";
-    
+    $primeiroParagrafo = $_POST['primeiroParagrafo'];
+    $segundoParagrafo = $_POST['segundoParagrafo'];
+    $terceiroParagrafo = $_POST['terceiroParagrafo'];
     
 
     $html = "<table>
@@ -82,11 +82,14 @@
     $data = '';
 
     $data .= '<h1> Relatório Individual Infantil</h1>';
-    $data .= '<b> Nome:     </b>' . $name . '<br/>';
-    $data .= '<b> Turma:     </b>' . $turma . '<br/>';
+    $data .= '<div class="row mb-2">';
+    $data .= '<div class="col-md-6"><b> Nome:     </b>' . $name . '<br/></div>';
+    $data .= '<div class="col-md-6"><b> Turma:     </b>' . $turma . '<br/></div>';
+    $data .= '</div>';
     $data .= '<b> Professora: </b>' . $professora . '<br/>';
-    $data .= '<p>' . $primeiroParagrafo . '<p>';
-    $data .= '<p>' . $segundoParagrafo . '<p>';
+    $data .= '<p> &emsp;&emsp;' . $primeiroParagrafo . '<p>';
+    $data .= '<p> &emsp;&emsp;' . $segundoParagrafo . '<p>';
+    $data .= '<p> &emsp;&emsp;' . $terceiroParagrafo . '<p>';
     $data .= $html . '<br/>';
     $data .= '<p> Avanços: <p><br/>';
     $data .= '<p> Merece Atenção: <p><br/>';
