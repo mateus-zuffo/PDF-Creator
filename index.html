@@ -12,18 +12,20 @@
     
     <div class="container-fluid">
         <form class="form-group" action="makepdf.php" method="post" class="col-md-6"> 
-            <div id="titulo" name="titulo" class="d-flex justify-content-center"> <h1>  Crie seu Relatório </h1></div>
-            <div id="subtitulo" name="subtitulo" class="d-flex justify-content-center"> Preencha os dados relacionados para criar o relatório final de forma mais simples </div>
+            <div class="text-center h1"> <h1>  Crie seu Relatório </h1></div>
+            <div class="text-center h3"> Relatório individual - Aulas Presenciais </div>
+            <div class="text-center h3"> Educação Infantil </div>
 
             <div class="row mb-2">
                 <div class="col-md-6"><input type="text" name="name" placeholder="Nome do aluno" class="form-control" required> </div>
                 <div class="col-md-6"><input type="text" name="turma" placeholder="Turma" class="form-control" required> </div>
-            </div>
-            <div class="col-md-12"><input type="text" name="professora" placeholder="Professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
+            </div>            
+            <div class="col-md-12"><input type="text" name="professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
+
             </br>
-            <textarea id="primeiroParagrafo" name="primeiroParagrafo" placeholder="Primeiro Paragrafo" style="height:100px" class="form-control mb-2" value="$mensagem2"></textarea>
-            <textarea id="segundoParagrafo" name="segundoParagrafo" placeholder="Segundo Paragrafo" style="height:100px" class="form-control mb-2" value="$mensagem2"></textarea>
-            <textarea id="terceiroParagrafo" name="terceiroParagrafo" placeholder="Terceiro Paragrafo" style="height:100px" class="form-control mb-2" value="$mensagem2"></textarea>
+            <textarea id="primeiroParagrafo" name="primeiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
+            <textarea id="segundoParagrafo" name="segundoParagrafo" style="height:90px" class="form-control mb-2"></textarea>
+            <textarea id="terceiroParagrafo" name="terceiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
             </br>
 
             <textarea name="message" placeholder="Observações" class="form-control mb-2"></textarea>
