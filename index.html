@@ -7,31 +7,193 @@
     <title>Relatório Individual</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
 </head>
 <body>
     
     <div class="container-fluid">
         <form class="form-group" action="makepdf.php" method="post" class="col-md-6"> 
-            <div class="text-center h1"> <h1>  Crie seu Relatório </h1></div>
-            <div class="text-center h3"> Relatório individual - Aulas Presenciais </div>
-            <div class="text-center h3"> Educação Infantil </div>
+            <div id="titulo" class="text-center h1"></div>
+            <div id="subtitulo1" class="text-center h3"></div>
+            <div id="subtitulo2" class="text-center h3"></div>
 
             <div class="row mb-2">
-                <div class="col-md-6"><input type="text" name="name" placeholder="Nome do aluno" class="form-control" required> </div>
-                <div class="col-md-6"><input type="text" name="turma" placeholder="Turma" class="form-control" required> </div>
+                <div class="col-md-6">Nome do Aluno:<input type="text" name="name" placeholder="Nome completo" class="form-control" required> </div>
+                <div class="col-md-6">Turma:<input type="text" name="turma" placeholder="Turma" class="form-control" required> </div>
             </div>            
-            <div class="col-md-12"><input type="text" name="professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
-
+            <div class="col-md-12">Professor(a):<input type="text" name="professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
+            
             </br>
+            <div class="text-center h5">Texto Inicial</div>            
             <textarea id="primeiroParagrafo" name="primeiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
             <textarea id="segundoParagrafo" name="segundoParagrafo" style="height:90px" class="form-control mb-2"></textarea>
             <textarea id="terceiroParagrafo" name="terceiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
+            
             </br>
+            <div class="text-center h5">Avaliações</div>             
+            <div class="text-left p-3 mb-2 bg-light border">
+                <div class="text-dark h6 align-self-center mb-2 ">O EU, O OUTRO E O NÓS</div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">1. Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="11" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="11" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="11" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="11" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">     
+                    <div class="text-left align-self-center col-md-6">2. Comunica suas ideias e sentimentos a pessoas e grupos diversos: </div>                             
+                    <label class="btn btn-light active">
+                    <input type="radio" name="12" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="12" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="12" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="12" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">3. Manuseia a tesoura com segurança: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="13" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="13" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="13" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="13" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">4. Segura o lápis de forma correta, com firmeza: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="14" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="14" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="14" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="14" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">5. Realiza pinçamento de objetos: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="15" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="15" id="option2" checked> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="15" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="15" id="option4"> Não Trabalhado
+                    </label>
+                </div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">6. Rasga papel com segurança: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="16" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="16" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="16" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="16" id="option4"> Não Trabalhado
+                    </label>
+                </div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">7. Segue sequências: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="17" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="17" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="17" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="17" id="option4"> Não Trabalhado
+                    </label>
+                </div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">8. Dança: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="18" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="18" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="18" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="18" id="option4"> Não Trabalhado
+                    </label>
+                </div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">9. Canta as músicas propostas nas atividades: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="19" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="19" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="19" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="19" id="option4" checked> Não Trabalhado
+                    </label>
+                </div>
+            </div> 
 
-            <textarea name="message" placeholder="Observações" class="form-control mb-2"></textarea>
-            <textarea name="message" placeholder="Observações" class="form-control mb-2"></textarea>
-            <textarea name="message" placeholder="Observações" class="form-control mb-2"></textarea>
-            <textarea name="message" placeholder="Observações" class="form-control mb-2"></textarea>
+
+
+            </br>    
+            <div class="text-center h5">Observações</div>  
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Avanços: </span>
+                </div>
+                <input name="avancos" type="text" class="form-control">
+            </div>    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Merece Atenção: </span>
+                </div>
+                <input name="mereceatencao" type="text" class="form-control">
+            </div>  
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Parecer Final: </span>
+                </div>
+                <input name="parecerfinal" type="text" class="form-control">
+            </div>  
+
             <button type="submit" class= "btn btn-success btn-lg btn-block">Criar PDF</button>
         </form> 
     </div>  
@@ -40,6 +202,9 @@
 
 </body>
 <script>
+    document.getElementById('titulo').textContent = "Crie seu Relatório";
+    document.getElementById('subtitulo1').textContent = "Relatório Individual - Aulas Presenciais ";
+    document.getElementById('subtitulo2').textContent = "Educação Infantil";
      document.getElementById('primeiroParagrafo').value = "Durante esse ano procuramos a melhor forma de elaborar, propor e realizar diversas atividades que pudessem atrair a concentração das crianças, para que elas fossem capazes de aprender e desenvolver-se de acordo com seu ritmo, todas as formas de linguagem corporal, oral e visual. O desenvolvimento da escrita e da leitura foi acontecendo respeitando o tempo de cada um. Em Matemática trabalhamos assuntos com grande relevância para a vida da criança, acreditamos que muitos desses assuntos poderão ser consolidados na etapa seguinte.";
      document.getElementById('segundoParagrafo').value = "A amizade, o companheirismo, a solidariedade e o carinho foram pontos positivos importantes para o crescimento pessoal e cognitivo durante todas as adaptações necessárias para a singularidade que este ano nos trouxe. Mais uma vez, queremos ressaltar e valorizar a importância do envolvimento da família durante as aulas. Prosseguimos na certeza de que Família e Escola caminham juntas para o pleno desenvolvimento das crianças."
 </script>
