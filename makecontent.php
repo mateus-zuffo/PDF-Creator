@@ -15,11 +15,11 @@ function createContent(){
 
     $data = '';    
     $data .= '<h1> Relatório Individual Infantil</h1>';
-    $data .= '<div class="row mb-2">';
-    $data .= '<div class="col-md-6"><b> Nome:     </b>' . $name . '<br/></div>';
-    $data .= '<div class="col-md-6"><b> Turma:     </b>' . $turma . '<br/></div>';
-    $data .= '</div>';
-    $data .= '<b> Professora: </b>' . $professora . '<br/>';
+    $data .= '<b> Nome:  </b>' . $name;
+    $data .= '<b> Turma: </b>' . $turma;
+    $data .= '<br/>';
+    $data .= '<b> Professora: </b>' . $professora;
+    $data .= '<br/>';
     if(isset($primeiroParagrafo)){
         $data .= '<p> &emsp;&emsp;' . $primeiroParagrafo . '<p>';
     }    
