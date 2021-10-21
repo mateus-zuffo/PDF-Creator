@@ -11,30 +11,26 @@
 </head>
 <body>
     
-    <div class="container-fluid">
+    <div class="container-md">
         <form class="form-group" action="makepdf.php" method="post" class="col-md-6"> 
+            <br>
             <div id="titulo" class="text-center h1"></div>
             <div id="subtitulo1" class="text-center h3"></div>
             <div id="subtitulo2" class="text-center h3"></div>
 
+            <div class="col-md-12"><b>Professor(a):</b><input type="text" name="professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
             <div class="row mb-2">
-                <div class="col-md-6">Nome do Aluno:<input type="text" name="name" placeholder="Nome completo" class="form-control" required> </div>
-                <div class="col-md-6">Turma:<input type="text" name="turma" placeholder="Turma" class="form-control" required> </div>
+                <div class="col-md-6"><b>Nome do Aluno:</b><input type="text" name="name" placeholder="Nome completo" class="form-control" required> </div>
+                <div class="col-md-6"><b>Turma:</b><input type="text" name="turma" placeholder="Turma" class="form-control" required> </div>
             </div>            
-            <div class="col-md-12">Professor(a):<input type="text" name="professora" class="form-control" required value="Stephani Milagre Dal Zuffo"> </div>
             
+
             </br>
-            <div class="text-center h5">Texto Inicial</div>            
-            <textarea id="primeiroParagrafo" name="primeiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
-            <textarea id="segundoParagrafo" name="segundoParagrafo" style="height:90px" class="form-control mb-2"></textarea>
-            <textarea id="terceiroParagrafo" name="terceiroParagrafo" style="height:90px" class="form-control mb-2"></textarea>
-            
-            </br>
-            <div class="text-center h5">Avaliações</div>             
+            <div class="text-center h5"><b>Avaliações</b></div>             
             <div class="text-left p-3 mb-2 bg-light border">
-                <div class="text-dark h6 align-self-center mb-2 ">O EU, O OUTRO E O NÓS</div>            
+                <div class="text-dark h6 align-self-center mb-2 "><b>O EU, O OUTRO E O NÓS</b></div>            
                 <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
-                    <div class="text-left align-self-center col-md-6">1. Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações: </div>  
+                    <div class="text-left align-self-center col-md-6">1. Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações: </div> 
                     <label class="btn btn-light active">
                     <input type="radio" name="11" id="option1" > Sim
                     </label>
@@ -169,11 +165,244 @@
                     </label>
                 </div>
             </div> 
+            
+            </br>
+            <div class="text-left p-3 mb-2 bg-light border">
+                <div class="text-dark h6 align-self-center mb-2 "><b>TRAÇOS, SONS CORES E FORMAS</b></div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">1. Expressa-se com criatividade em seus desenhos: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="21" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="21" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="21" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="21" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">     
+                    <div class="text-left align-self-center col-md-6">2. Usa cores variadas ao colorir ou desenhar: </div>                             
+                    <label class="btn btn-light active">
+                    <input type="radio" name="22" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="22" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="22" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="22" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">3. Reconhece as letras que foram estudadas e seus traçados: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="23" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="23" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="23" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="23" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">4. Acrescenta detalhes as suas produções: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="24" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="24" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="24" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="24" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">5. Faz representações de esquemas corporais, atribuindo detalhes do corpo: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="25" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="25" id="option2" checked> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="25" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="25" id="option4"> Não Trabalhado
+                    </label>
+                </div>            
+            </div> 
 
-
+            </br>
+            <div class="text-left p-3 mb-2 bg-light border">
+                <div class="text-dark h6 align-self-center mb-2 "><b>ESPAÇOS, TEMPOS, QUANTIDADES, RELAÇÕES</b></div>            
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">1. Reconhece a representação os numerais estudados: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="31" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="31" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="31" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="31" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">     
+                    <div class="text-left align-self-center col-md-6">2. Escreve os números no sentido correto: </div>                             
+                    <label class="btn btn-light active">
+                    <input type="radio" name="32" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="32" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="32" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="32" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">3. Nomeia as cores primárias e secundárias: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="33" id="option1"> Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="33" id="option2"> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="33" id="option3" checked> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="33" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">4. Nomeia as formas geométricas estudadas: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="34" id="option1" > Sim
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="34" id="option2" checked> Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="34" id="option3" > Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="34" id="option4"> Não Trabalhado
+                    </label>
+                </div>
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">5. Tem noções de: Dentro/fora: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="35" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="35" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="35" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="35" id="option4"> Não Trabalhado
+                    </label>
+                </div>   
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">6. Tem noções de cheio/vazio: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="36" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="36" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="36" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="36" id="option4"> Não Trabalhado
+                    </label>
+                </div>   
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">7. Tem noções de: Alto/baixo: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="37" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="37" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="37" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="37" id="option4"> Não Trabalhado
+                    </label>
+                </div>   
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">8. Tem noções de quantidade: mais ou menos: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="38" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="38" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="38" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="38" id="option4"> Não Trabalhado
+                    </label>
+                </div>   
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">9. Tem noções de tamanho pequeno/médio/grande: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="39" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="39" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="39" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="39" id="option4"> Não Trabalhado
+                    </label>
+                </div>   
+                <div class="btn-group btn-group-toggle p-2 mb-2 bg-light text-black d-flex center border" data-toggle="buttons">                    
+                    <div class="text-left align-self-center col-md-6">10. Tem noções de: na frente/atrás: </div>  
+                    <label class="btn btn-light active">
+                    <input type="radio" name="310" id="option1" checked> Sim
+                    </label>
+                    <label class="btn btn-light ">
+                    <input type="radio" name="310" id="option2" > Não
+                    </label>
+                    <label class="btn btn-light">
+                    <input type="radio" name="310" id="option3"> Em Processo
+                    </label>                
+                    <label class="btn btn-light">
+                    <input type="radio" name="310" id="option4"> Não Trabalhado
+                    </label>
+                </div>          
+            </div> 
 
             </br>    
-            <div class="text-center h5">Observações</div>  
+            <div class="text-center h5"><b>Observações</b></div>  
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
