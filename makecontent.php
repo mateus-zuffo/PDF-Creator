@@ -10,7 +10,6 @@ function createContent(){
     $avancos = $_POST['avancos'];
     $mereceatencao = $_POST['mereceatencao'];
     $parecerfinal = $_POST['parecerfinal'];
-    $table = createTable('O EU, O OUTRO E O NÓS');
 
     $data = '';    
     //Título
@@ -35,42 +34,42 @@ function createContent(){
     }
 
     //Tabela
+    $data .= '<br/>';
+    $table = createTable('O EU, O OUTRO E O NÓS');
     $data .= $table . '<br/>';
+
+    //Final
     $data .= '<b> Avanços: </b><br/>' . $avancos;
     $data .= '<br/><br/>';
     $data .= '<b> Merece Atenção: </b><br/>' . $mereceatencao;
     $data .= '<br/><br/>';
     $data .= '<b> Parecer Final:  </b><br/>' . $parecerfinal;
     $data .= '<br/><br/>';
-
     return $data;
 }
 
 
-
 function createTable($titulo){
-    $html = "<table>
-    <thead>
+    $html = "<table border='1'>
         <tr>
-            <th>Nº</th>
-            <th>".$titulo."</th>
-            <th>Sim</th>
-            <th>Não</th>
-            <th>Em Processo</th>
-            <th>Não Trabalhado</th>
-        </tr>
-    </thead>
-    <tbody>";
-    $html = addTableRow($html,"1","Teste","1");
+            <td>Nº</td>
+            <td>".$titulo."</td>
+            <td>Sim</td>
+            <td>Não</td>
+            <td>Em Processo</td>
+            <td>Não Trabalhado</td>
+        </tr>";
+    $html .= addTableRow("1","Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações",1);
+    $html .= addTableRow("2","Comunica suas ideias e sentimentos a pessoas e grupos diversos",2);
+    $html .= addTableRow("3","Manuseia a tesoura com segurança",3);
 
-    $html = $html ."  
-    </tbody>
-    </table>";
+    $html .= "</table>";
+    return $html;
 }
 
-function addTableRow($html, $numero, $objetivo, $resposta){
+function addTableRow( $numero, $objetivo, $resposta){
     if($resposta == 1){
-        $html = $html ."    
+        $html = "    
             <tr>
                 <td>".$numero."</td>
                 <td>".$objetivo."</td>
@@ -80,7 +79,7 @@ function addTableRow($html, $numero, $objetivo, $resposta){
                 <td></td>
             </tr>";   
     } else if( $resposta == 2){
-        $html = $html ."    
+        $html = "    
             <tr>
                 <td>".$numero."</td>
                 <td>".$objetivo."</td>
@@ -90,7 +89,7 @@ function addTableRow($html, $numero, $objetivo, $resposta){
                 <td></td>
             </tr>";   
     } else if($resposta == 3){
-        $html = $html ."    
+        $html = "    
             <tr>
                 <td>".$numero."</td>
                 <td>".$objetivo."</td>
@@ -100,7 +99,7 @@ function addTableRow($html, $numero, $objetivo, $resposta){
                 <td></td>
             </tr>";   
     } else if($resposta == 4){
-        $html = $html ."    
+        $html = "    
             <tr>
                 <td>".$numero."</td>
                 <td>".$objetivo."</td>
