@@ -55,9 +55,13 @@ function createContent(){
     $data .= '<b> Merece Atenção: </b><br/>  &emsp;&emsp;' . $mereceatencao;
     $data .= '<br/><br/>';
     $data .= '<b> Parecer Final:  </b><br/>  &emsp;&emsp;' . $parecerfinal;
-    $data .= '<br/><br/>';
+    $data .= '<br/><br/><br/><br/><br/><br/><br/><br/>';    
+    $data .= '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>';    
+    $data .= '<b> Professora: </b>' . $professora;
+    $data .= '<b> Data: </b> '.date('d/m/y');
     return $data;
 }
+
 
 function createTable($titulo, $quadro){    
     $contador = 1;
