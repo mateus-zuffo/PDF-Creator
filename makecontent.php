@@ -50,11 +50,11 @@ function createContent(){
     $data .= $table . '<br/><br/>';
 
     //Final
-    $data .= '<b> Avanços: </b><br/>' . $avancos;
+    $data .= '<b> Avanços: </b><br/>  &emsp;&emsp;' . $avancos;
     $data .= '<br/><br/>';
-    $data .= '<b> Merece Atenção: </b><br/>' . $mereceatencao;
+    $data .= '<b> Merece Atenção: </b><br/>  &emsp;&emsp;' . $mereceatencao;
     $data .= '<br/><br/>';
-    $data .= '<b> Parecer Final:  </b><br/>' . $parecerfinal;
+    $data .= '<b> Parecer Final:  </b><br/>  &emsp;&emsp;' . $parecerfinal;
     $data .= '<br/><br/>';
     return $data;
 }
