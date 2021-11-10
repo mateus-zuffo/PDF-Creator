@@ -20,8 +20,8 @@ function createContent(){
     $data .= '<br/>';
     $data .= '<b> Escola: </b>' . $escola;
     $data .= '<br/>';
-    $data .= '<b> Nome:  </b>' . $name;
-    $data .= '<b> Turma: </b>' . $turma;
+    $data .= "<b> Nome:  </b>" . $name;
+    $data .= "<b> Turma: </b>" . $turma;
     $data .= '<br/>';
     $data .= '<b> Professora: </b>' . $professora;
     $data .= '<br/>';
@@ -42,8 +42,8 @@ function createContent(){
         border-collapse:collapse;
         width:100%;
     }
-    th,td{
-        border:1px solid;
+    td{
+        border:1px solid black;
         text-align: center;
     }
     h1,h2,h3{
@@ -51,12 +51,12 @@ function createContent(){
         line-height: 0.3;
     }
     </style>';
-    $table = createTable('O EU, O OUTRO E O NÓS', 1);
-    $data .= $table . '<br/><br/><br/>';
-    $table = createTable('TRAÇOS, SONS CORES E FORMAS', 2);
-    $data .= $table . '<br/><br/><br/>';
-    $table = createTable('ESPAÇOS, TEMPOS, QUANTIDADES, RELAÇÕES', 3);
-    $data .= $table . '<br/><br/>';
+    $data .= createIndexTable() . '<br/>';
+    $data .= createTable('<b> O EU, O OUTRO E O NÓS </b>', 1). '<br/><br/><br/>';
+    $data .= createIndexTable() . '<br/>';
+    $data .= createTable('<b> TRAÇOS, SONS CORES E FORMAS </b>', 2) . '<br/><br/><br/>';
+    $data .= createIndexTable() . '<br/>';
+    $data .= createTable('<b> ESPAÇOS, TEMPOS, QUANTIDADES, RELAÇÕES </b>', 3) . '<br/><br/>';
 
     //Final
     $data .= '<b> Avanços: </b><br/>  &emsp;&emsp;' . $avancos;
@@ -76,8 +76,19 @@ function createFooter(){
     return $data;
 }
 
-function createTable($titulo, $quadro){    
-    $contador = 1;
+function createIndexTable(){
+    $html = "<table style='float:right;border:none;'>
+        <tr>
+            <td style='text-align:left;width:50%;border:none;'></td>
+            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>S-SIM </td>
+            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>N-NÃO </td>
+            <td style='width:20%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>EP-EM PROCESSO</td>
+            <td style='width:20%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>NT-NÃO TRABALHADO</td>
+        </tr>
+    </table>";
+    return $html;
+}
+function createTable($titulo, $quadro){  
     if($quadro == 1){
         $varInicio = 1;
         $varFinal = 9;
@@ -91,67 +102,62 @@ function createTable($titulo, $quadro){
         $varFinal = 24;
     }
 
+
     $html = "<table>
         <tr>
-            <td>Nº</td>
-            <td style='text-align:left;'>".$titulo."</td>
-            <td>Sim</td>
-            <td>Não</td>
-            <td>Em Processo</td>
-            <td>Não Trabalhado</td>
+            <td style='text-align:left;width:80%;'>".$titulo."</td>
+            <td style='width:5%;'>S </td>
+            <td style='width:5%;'>N </td>
+            <td style='width:5%;'>EP</td>
+            <td style='width:5%;'>NT</td>
         </tr>";
 
 
     for($var = $varInicio; $var <= $varFinal; $var++){
         $linha = getLinha($var);
-        $html .= addTableRow($contador,$linha['TITULO'],$linha['RESPOSTA']);   
-        $contador++; 
+        $html .= addTableRow($linha['TITULO'],$linha['RESPOSTA']);   
     }
 
     $html .= "</table>";
     return $html;
 }
 
-function addTableRow($numero, $objetivo, $resposta){
+function addTableRow($objetivo, $resposta){
     if($resposta == 'option1'){
         $html = "    
             <tr>
-                <td style='width:5%;'>".$numero."</td>
-                <td style='text-align:left;width:63%;'>".$objetivo."</td>
+                <td style='text-align:left;width:80%;'>".$objetivo."</td>
                 <td style='width:5%;'>X</td>
                 <td style='width:5%;'></td>
-                <td style='width:10%;'></td>
-                <td style='width:12%;'></td>
+                <td style='width:5%;'></td>
+                <td style='width:5%;'></td>
             </tr>";   
     } else if( $resposta == 'option2'){
         $html = "    
             <tr>
-            <td style='width:5%;'>".$numero."</td>
-            <td style='text-align:left;width:63%;'>".$objetivo."</td>
+            <td style='text-align:left;width:80%;'>".$objetivo."</td>
             <td style='width:5%;'></td>
             <td style='width:5%;'>X</td>
-            <td style='width:10%;'></td>
-            <td style='width:12%;'></td>
+            <td style='width:5%;'></td>
+            <td style='width:5%;'></td>
             </tr>";   
     } else if($resposta == 'option3'){
         $html = "    
             <tr>
-                <td style='width:5%;'>".$numero."</td>
-                <td style='text-align:left;width:63%;'>".$objetivo."</td>
+                <td style='text-align:left;width:80%;'>".$objetivo."</td>
                 <td style='width:5%;'></td>
                 <td style='width:5%;'></td>
-                <td style='width:10%;'>X</td>
-                <td style='width:12%;'></td>
+                <td style='width:5%;'>X</td>
+                <td style='width:5%;'></td>
             </tr>";   
     } else if($resposta == 'option4'){
         $html = "    
             <tr>
-                <td style='width:5%;'>".$numero."</td>
-                <td style='text-align:left;width:63%;'>".$objetivo."</td>
+                <td style='text-align:left;width:80%;'>".$objetivo."</td>
                 <td style='width:5%;'></td>
                 <td style='width:5%;'></td>
-                <td style='width:10%;'></td>
-                <td style='width:12%;'>X</td>    
+                <td style='width:5%;'></td>
+                <td style='width:5%;'>X</td>    
             </tr>";   
     }
 
@@ -162,99 +168,99 @@ function getLinha($var){
     $valor = '';
     switch ($var) {
         case 1:
-            $topico = "Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações:";
+            $topico = "1. Age de maneira independente, com confiança em suas capacidades, reconhecendo suas conquistas e limitações:";
             $valor = $_POST['11'];
             break;
         case 2:
-            $topico = "Comunica suas ideias e sentimentos a pessoas e grupos diversos:";
+            $topico = "2. Comunica suas ideias e sentimentos a pessoas e grupos diversos:";
             $valor = $_POST['12'];
             break;
         case 3:
-            $topico = "Manuseia a tesoura com segurança:";
+            $topico = "3. Manuseia a tesoura com segurança:";
             $valor = $_POST['13'];
             break;
         case 4:
-            $topico = "Segura o lápis de forma correta, com firmeza:";
+            $topico = "4. Segura o lápis de forma correta, com firmeza:";
             $valor = $_POST['14'];
             break;
         case 5:
-            $topico = "Realiza pinçamento de objetos:";
+            $topico = "5. Realiza pinçamento de objetos:";
             $valor = $_POST['15'];
             break;
         case 6:
-            $topico = "Rasga papel com segurança:";
+            $topico = "6. Rasga papel com segurança:";
             $valor = $_POST['16'];
             break;
         case 7:
-            $topico = "Segue sequências:";
+            $topico = "7. Segue sequências:";
             $valor = $_POST['17'];
             break;
         case 8:
-            $topico = "Dança:";
+            $topico = "8. Dança:";
             $valor = $_POST['18'];
             break;
         case 9:
-            $topico = "Canta as músicas propostas nas ativvalueades:";
+            $topico = "9. Canta as músicas propostas nas ativvalueades:";
             $valor = $_POST['19'];
             break;
         case 10:
-            $topico = "Expressa-se com criativvalueade em seus desenhos:";
+            $topico = "1. Expressa-se com criativvalueade em seus desenhos:";
             $valor = $_POST['21'];
             break;    
         case 11:
-            $topico = "Usa cores variadas ao colorir ou desenhar:";
+            $topico = "2. Usa cores variadas ao colorir ou desenhar:";
             $valor = $_POST['22'];
             break;
         case 12:
-            $topico = "Reconhece as letras que foram estudadas e seus traçados:";
+            $topico = "3. Reconhece as letras que foram estudadas e seus traçados:";
             $valor = $_POST['23'];
             break;
         case 13:
-            $topico = "Acrescenta detalhes as suas produções:";
+            $topico = "4. Acrescenta detalhes as suas produções:";
             $valor = $_POST['24'];
             break;
         case 14:
-            $topico = "Faz representações de esquemas corporais, atribuindo detalhes do corpo:";
+            $topico = "5. Faz representações de esquemas corporais, atribuindo detalhes do corpo:";
             $valor = $_POST['25'];
             break;
         case 15:
-            $topico = "Reconhece a representação os numerais estudados:";
+            $topico = "1. Reconhece a representação os numerais estudados:";
             $valor = $_POST['31'];
             break;
         case 16:
-            $topico = "Escreve os números no sentvalueo correto:";
+            $topico = "2. Escreve os números no sentvalueo correto:";
             $valor = $_POST['32'];
             break;
         case 17:
-            $topico = "Nomeia as cores primárias e secundárias:";
+            $topico = "3. Nomeia as cores primárias e secundárias:";
             $valor = $_POST['33'];
             break;     
         case 18:
-            $topico = "Nomeia as formas geométricas estudadas:";
+            $topico = "4. Nomeia as formas geométricas estudadas:";
             $valor = $_POST['34'];
             break;    
         case 19:
-            $topico = "Tem noções de: Dentro/fora:";
+            $topico = "5. Tem noções de: Dentro/fora:";
             $valor = $_POST['35'];
             break;    
         case 20:
-            $topico = "Tem noções de cheio/vazio:";
+            $topico = "6. Tem noções de cheio/vazio:";
             $valor = $_POST['36'];
             break;    
         case 21:
-            $topico = "Tem noções de: Alto/baixo:";
+            $topico = "7. Tem noções de: Alto/baixo:";
             $valor = $_POST['37'];
             break;    
         case 22:
-            $topico = "Tem noções de quantvalueade: mais ou menos:";
+            $topico = "8. Tem noções de quantvalueade: mais ou menos:";
             $valor = $_POST['38'];
             break;    
         case 23:
-            $topico = "Tem noções de tamanho pequeno/médio/grande:";
+            $topico = "9. Tem noções de tamanho pequeno/médio/grande:";
             $valor = $_POST['39'];
             break;    
         case 24:
-            $topico = "Tem noções de: na frente/atrás:";
+            $topico = "10. Tem noções de: na frente/atrás:";
             $valor = $_POST['310'];
             break;     
     }
