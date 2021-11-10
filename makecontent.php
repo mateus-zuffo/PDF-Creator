@@ -1,8 +1,9 @@
 <?php
 
 function createContent(){
-    $name = $_POST['name'];
+    $name = $_POST['aluno'];
     $turma = $_POST['turma'];
+    $escola = $_POST['escola'];
     $professora = $_POST['professora'];
     $primeiroParagrafo = 'Durante esse ano procuramos a melhor forma de elaborar, propor e realizar diversas atividades que pudessem atrair a concentração das crianças, para que elas fossem capazes de aprender e desenvolver-se de acordo com seu ritmo, todas as formas de linguagem corporal, oral e visual. O desenvolvimento da escrita e da leitura foi acontecendo respeitando o tempo de cada um. Em Matemática trabalhamos assuntos com grande relevância para a vida da criança, acreditamos que muitos desses assuntos poderão ser consolidados na etapa seguinte.';
     $segundoParagrafo = 'A amizade, o companheirismo, a solidariedade e o carinho foram pontos positivos importantes para o crescimento pessoal e cognitivo durante todas as adaptações necessárias para a singularidade que este ano nos trouxe. Mais uma vez, queremos ressaltar e valorizar a importância do envolvimento da família durante as aulas. Prosseguimos na certeza de que Família e Escola caminham juntas para o pleno desenvolvimento das crianças.';
@@ -12,9 +13,13 @@ function createContent(){
     $data = '';    
 
     //Título
-    $data .= '<h1> Relatório Individual Infantil</h1>';
+    $data .= '<h1> Relatório Individual - Aulas Presenciais</h1>';
+    $data .= '<h2> Educação Infantil </h2>';
 
     //Cabeçalho
+    $data .= '<br/>';
+    $data .= '<b> Escola: </b>' . $escola;
+    $data .= '<br/>';
     $data .= '<b> Nome:  </b>' . $name;
     $data .= '<b> Turma: </b>' . $turma;
     $data .= '<br/>';
@@ -41,6 +46,10 @@ function createContent(){
         border:1px solid;
         text-align: center;
     }
+    h1,h2,h3{
+        text-align: center;
+        line-height: 0.3;
+    }
     </style>';
     $table = createTable('O EU, O OUTRO E O NÓS', 1);
     $data .= $table . '<br/><br/><br/>';
@@ -55,13 +64,17 @@ function createContent(){
     $data .= '<b> Merece Atenção: </b><br/>  &emsp;&emsp;' . $mereceatencao;
     $data .= '<br/><br/>';
     $data .= '<b> Parecer Final:  </b><br/>  &emsp;&emsp;' . $parecerfinal;
-    $data .= '<br/><br/><br/><br/><br/><br/><br/><br/>';    
-    $data .= '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>';    
-    $data .= '<b> Professora: </b>' . $professora;
-    $data .= '<b> Data: </b> '.date('d/m/y');
+    $data .= '<br/><br/>';    
     return $data;
 }
 
+function createFooter(){
+    $professora = $_POST['professora'];
+    $data = '';
+    $data .= '<footer><b> Professora: </b>' . $professora;
+    $data .= '<b> &emsp;&emsp; Data: </b> '.date('d/m/y').'</footer>';
+    return $data;
+}
 
 function createTable($titulo, $quadro){    
     $contador = 1;
