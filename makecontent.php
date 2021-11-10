@@ -13,6 +13,7 @@ function createContent(){
     $data = '';    
 
     //Título
+    $data .= "<div class='container'>";
     $data .= '<h1> Relatório Individual - Aulas Presenciais</h1>';
     $data .= '<h2> Educação Infantil </h2>';
 
@@ -35,7 +36,7 @@ function createContent(){
     }
 
     //Tabela
-    $data .= '<br/>
+    $data .= "<br/>
     <style>
     table {
         border:1px solid black;
@@ -50,9 +51,22 @@ function createContent(){
         text-align: center;
         line-height: 0.3;
     }
-    </style>';
+    .container{
+        background-color:white;
+        padding: 5%; 
+        height: 29.7cm;
+        width: 21.0cm;
+    }
+    .fundobranco{        
+        background-color:white;
+    }
+    @page {
+        background: url('/xampp/htdocs/mPDF/Relatorio-Infantil/backgrounds/7.jpg') no-repeat 0 0;
+        background-image-resize: 6;
+    }
+    </style>";
     $data .= createIndexTable() . '<br/>';
-    $data .= createTable('<b> O EU, O OUTRO E O NÓS </b>', 1). '<br/><br/><br/>';
+    $data .= createTable('<b> O EU, O OUTRO E O NÓS </b>', 1). '<pagebreak>';
     $data .= createIndexTable() . '<br/>';
     $data .= createTable('<b> TRAÇOS, SONS CORES E FORMAS </b>', 2) . '<br/><br/><br/>';
     $data .= createIndexTable() . '<br/>';
@@ -64,15 +78,18 @@ function createContent(){
     $data .= '<b> Merece Atenção: </b><br/>  &emsp;&emsp;' . $mereceatencao;
     $data .= '<br/><br/>';
     $data .= '<b> Parecer Final:  </b><br/>  &emsp;&emsp;' . $parecerfinal;
-    $data .= '<br/><br/>';    
+    $data .= '<br/><br/>';     
+    $data .= '</div>';   
     return $data;
 }
 
 function createFooter(){
     $professora = $_POST['professora'];
     $data = '';
-    $data .= '<footer><b> Professora: </b>' . $professora;
-    $data .= '<b> &emsp;&emsp; Data: </b> '.date('d/m/y').'</footer>';
+    $data .= "<div class='fundobranco'>";
+    $data .= "<b> Professora: </b>" . $professora;
+    $data .= '<b> &emsp;&emsp; Data: </b> '.date('d/m/y');
+    $data .= "</div>";
     return $data;
 }
 
