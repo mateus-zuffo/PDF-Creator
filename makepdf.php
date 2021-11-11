@@ -8,7 +8,7 @@
 
     $mpdf = new \Mpdf\Mpdf();
     $mpdf->WriteHTML($body);
-    $mpdf->SetFooter($footer);
+    //$mpdf->SetFooter($footer);
     $mpdf->Output($name.'.pdf', 'D');
     
 ?>

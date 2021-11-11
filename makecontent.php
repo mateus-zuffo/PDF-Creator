@@ -56,12 +56,11 @@ function createContent(){
         padding: 5%; 
         height: 29.7cm;
         width: 21.0cm;
-    }
-    .fundobranco{        
-        background-color:white;
+        border-radius: 10px;
+        border:1px solid black;
     }
     @page {
-        background: url('/xampp/htdocs/mPDF/Relatorio-Infantil/backgrounds/7.jpg') no-repeat 0 0;
+        background: url('/xampp/htdocs/mPDF/Relatorio-Infantil/backgrounds/1.jpg') no-repeat 0 0;
         background-image-resize: 6;
     }
     </style>";
@@ -78,8 +77,7 @@ function createContent(){
     $data .= '<b> Merece Atenção: </b><br/>  &emsp;&emsp;' . $mereceatencao;
     $data .= '<br/><br/>';
     $data .= '<b> Parecer Final:  </b><br/>  &emsp;&emsp;' . $parecerfinal;
-    $data .= '<br/><br/>';     
-    $data .= '</div>';   
+    $data .= '<br/><br/>'; 
     return $data;
 }
 
@@ -97,10 +95,10 @@ function createIndexTable(){
     $html = "<table style='float:right;border:none;'>
         <tr>
             <td style='text-align:left;width:50%;border:none;'></td>
-            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>S-SIM </td>
-            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>N-NÃO </td>
-            <td style='width:20%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>EP-EM PROCESSO</td>
-            <td style='width:20%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>NT-NÃO TRABALHADO</td>
+            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>S - SIM </td>
+            <td style='width:10%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>N - NÃO </td>
+            <td style='width:20%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>EP - EM PROCESSO</td>
+            <td style='width:25%;background:lightgray;text-color:white;font-size:11;border:1px solid;'>NT - NÃO TRABALHADO</td>
         </tr>
     </table>";
     return $html;
@@ -217,11 +215,11 @@ function getLinha($var){
             $valor = $_POST['18'];
             break;
         case 9:
-            $topico = "9. Canta as músicas propostas nas ativvalueades:";
+            $topico = "9. Canta as músicas propostas nas atividades:";
             $valor = $_POST['19'];
             break;
         case 10:
-            $topico = "1. Expressa-se com criativvalueade em seus desenhos:";
+            $topico = "1. Expressa-se com criatividade em seus desenhos:";
             $valor = $_POST['21'];
             break;    
         case 11:
@@ -245,7 +243,7 @@ function getLinha($var){
             $valor = $_POST['31'];
             break;
         case 16:
-            $topico = "2. Escreve os números no sentvalueo correto:";
+            $topico = "2. Escreve os números no sentido correto:";
             $valor = $_POST['32'];
             break;
         case 17:
