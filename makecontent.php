@@ -14,12 +14,11 @@ function createContent(){
 
     //Título
     $data .= "<div class='container'>";
+    $data .= '<h2>' . $escola. '</h2>';
     $data .= '<h1> Relatório Individual - Aulas Presenciais</h1>';
     $data .= '<h2> Educação Infantil </h2>';
 
     //Cabeçalho
-    $data .= '<br/>';
-    $data .= '<b> Escola: </b>' . $escola;
     $data .= '<br/>';
     $data .= "<b> Nome:  </b>" . $name;
     $data .= "<b> Turma: </b>" . $turma;
@@ -47,9 +46,15 @@ function createContent(){
         border:1px solid black;
         text-align: center;
     }
-    h1,h2,h3{
+    h1,h3{
         text-align: center;
         line-height: 0.3;
+    }
+    h2{
+        text-align: center; 
+        padding-top: 0px;   
+        line-height: 0.3;
+        padding-bottom: 20px;       
     }
     .container{
         background-color:white;
