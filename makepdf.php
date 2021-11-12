@@ -7,6 +7,7 @@
 
     $mpdf = new \Mpdf\Mpdf();
     $mpdf->WriteHTML($body);
-    $mpdf->Output($name.'.pdf', 'D');
+    //$mpdf->Output($name.'.pdf', 'D');
+    $mpdf->Output('teste.pdf', 'D');
     
 ?>

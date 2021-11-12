@@ -19,10 +19,13 @@ function createContent(){
     $data .= '<h2> Educação Infantil </h2>';
 
     //Cabeçalho
-    $data .= '<br/>';
-    $data .= "<b> Nome:  </b>" . $name;
-    $data .= "<b> Turma: </b>" . $turma;
-    $data .= '<br/>';
+    $data .= "<br/>
+    <table style='float:center;border:none;'>
+        <tr>
+            <td style='width:60%; text-align: left;border:none;'><b> Nome:  </b>".$name."</td>
+            <td style='width:40%; text-align: left;border:none;'><b> Turma: </b>".$turma."</td>
+        </tr>
+    </table>";
     $data .= '<b> Professora: </b>' . $professora;
     $data .= '<br/>';
 
