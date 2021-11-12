@@ -81,16 +81,6 @@ function createContent(){
     return $data;
 }
 
-function createFooter(){
-    $professora = $_POST['professora'];
-    $data = '';
-    $data .= "<div class='fundobranco'>";
-    $data .= "<b> Professora: </b>" . $professora;
-    $data .= '<b> &emsp;&emsp; Data: </b> '.date('d/m/y');
-    $data .= "</div>";
-    return $data;
-}
-
 function createIndexTable(){
     $html = "<table style='float:right;border:none;'>
         <tr>
